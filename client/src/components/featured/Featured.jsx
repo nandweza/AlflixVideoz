@@ -9,6 +9,16 @@ export default function Featured({type}) {
           <span>{type === "movie" ? "Movies" : "Series"}</span>
           <select name="genre" id="genre">
             <option>Genre</option>
+            <option value="adventure">Adventure</option>
+            <option value="action">Action</option>
+            <option value="sci-fi">Sci-fi</option>
+            <option value="thriller">Thriller</option>
+            <option value="horror">Horror</option>
+            <option value="comedy">Comedy</option>
+            <option value="crime">Crime</option>
+            <option value="documentary">Documentary</option>
+            <option value="High-school">High School</option>
+            <option value="love-story">Love Story</option>
           </select>
         </div>
       )}
@@ -16,9 +26,8 @@ export default function Featured({type}) {
       <div className="info">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKLd9IZP6X0c6UTaLIoNYMrzCzq5FUxkiTgA&usqp=CAU" alt="" />
         <span className="desc">
-          nfihddddddddddddddddddddddddhfddddddddddddddddddf
-          nfihddddddddddddddddddddddddhfddddddddddddddddddf
-          nfihddddddddddddddddddddddddhfddddddddddddddddddf
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+        molestiae quas vel sint commodi repudiandae consequuntur
         </span>
         <div className="buttons">
           <button className="play">

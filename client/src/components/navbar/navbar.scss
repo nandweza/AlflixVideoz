@@ -21,6 +21,8 @@
     .left{
       display: flex;
       align-items: center;
+      font-weight: bold;
+      font-size: 16px;
       img{
         height: 25px;
         margin-right: 40px;
@@ -35,6 +37,7 @@
     .right{
       display: flex;
       align-items: center;
+      font-weight: bold;
 
       .icon{
         margin: 0px 15px;
