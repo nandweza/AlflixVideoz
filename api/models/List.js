@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-//const { Schema } = mongoose;
-//mongoose.Promise = global.Promise;
+const { Schema } = mongoose;
+mongoose.Promise = global.Promise;
 
 const ListSchema = new mongoose.Schema(
   {
@@ -9,6 +9,7 @@ const ListSchema = new mongoose.Schema(
     type: { type: String },
     genre: { type: String },
     content: { type: Array },
+    narration: { type: String },
   },
   { timestamps: true }
 );

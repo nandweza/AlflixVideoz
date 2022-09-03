@@ -1,7 +1,7 @@
 import { 
   Add, 
   PlayArrow, 
-  ThumbDownAltOutlined, 
+  ThumbDownAltOutlined,
   ThumbUpAltOutlined 
 } from "@material-ui/icons"
 import { useState } from "react"

@@ -3,6 +3,7 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const verify = require("../verifyToken");
 
+
 //UPADTE
 router.put("/:id", verify, async (req, res) => {
   if (req.user.id === req.params.id || req.user.isAdmin) {
@@ -10,7 +11,7 @@ router.put("/:id", verify, async (req, res) => {
       req.body.password = bcrypt.hash(
         req.body.password,
         'my_secret_key'
-      ).toString();
+      );//.toString();
     }
     try {
       const  updatedUser = await User.findByIdAndUpdate(

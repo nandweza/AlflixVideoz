@@ -7,7 +7,7 @@ const userRoute = require("./routes/users");
 const movieRoute = require("./routes/movies");
 const listRoute = require("./routes/lists");
 
-const port = 4000;
+const port = 8000;
 dotenv.config();
 
 mongoose.connect(process.env.MONGO_URL)
@@ -15,6 +15,7 @@ mongoose.connect(process.env.MONGO_URL)
 .catch((err) => console.log(err));
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
