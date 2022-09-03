@@ -13,6 +13,16 @@ import {
 const App = () => {
   const user = true;
   return (
+    /*<Router>
+      <Routes>
+        <Route exact path="/" element={ <Home />}></Route>
+        <Route path="/register" element={ <Register />}></Route>
+        <Route path="/login" element={ <Login />}></Route>
+        <Route path="/movies" element={<Home type="movies" />}></Route>
+        <Route path="/series" element={<Home type="series"/>}></Route>
+        <Route path="/watch" element={<Watch />}></Route>
+      </Routes>
+    </Router>*/
     <Router>
       <Routes>
         <Route exact path="/" element={user ? <Home /> : <Navigate to="/register" />}></Route>
