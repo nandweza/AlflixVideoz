@@ -7,7 +7,7 @@ const userRoute = require("./routes/users");
 const movieRoute = require("./routes/movies");
 const listRoute = require("./routes/lists");
 
-const port = 8000;
+const port = 4800;
 dotenv.config();
 
 mongoose.connect(process.env.MONGO_URL)

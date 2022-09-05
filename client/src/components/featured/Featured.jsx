@@ -1,7 +1,29 @@
 import { InfoOutlined, PlayArrow } from "@material-ui/icons";
+import { useEffect } from "react";
+import { useState } from "react";
 import "./featured.scss";
+import axios from "axios";
 
 export default function Featured({type}) {
+  const [content, setContent] = useState({});
+
+  useEffect(() => {
+    const getRandomContent = async () => {
+      try {
+        const res = await axios.get(`/movies/random?type=${type}`, {
+          headers:{
+            token: 
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTI0MDAyODA0YmZlY2I3M2VjMmEwNyIsImlzQWRtaW4iOiJ0cnVlIiwiaWF0IjoxNjYyMzcwOTM5LCJleHAiOjE2NjI2MzAxMzl9.gvZTbBZ5FucsiJQhXdeLIXxuoc8_vsWEpV_Fx2ZM0f8"
+          },
+        });
+        setContent(res.data[0]);
+      } catch(err) {
+        console.log(err);
+      }
+    };
+    getRandomContent();
+  }, [type]);
+  console.log(content);
   return (
     <div className="featured">
       {type && (
@@ -22,12 +44,11 @@ export default function Featured({type}) {
           </select>
         </div>
       )}
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKLd9IZP6X0c6UTaLIoNYMrzCzq5FUxkiTgA&usqp=CAU" alt="" />
+      <img src={content.img} alt="" />
       <div className="info">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKLd9IZP6X0c6UTaLIoNYMrzCzq5FUxkiTgA&usqp=CAU" alt="" />
+        <img src={content.imgTitle} alt="" />
         <span className="desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-        molestiae quas vel sint commodi repudiandae consequuntur
+          {content.desc}
         </span>
         <div className="buttons">
           <button className="play">
