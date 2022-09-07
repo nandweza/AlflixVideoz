@@ -9,20 +9,12 @@ import {
   Route,
   Navigate
 } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "./authContext/AuthContext";
 
 const App = () => {
-  const user = true;
+  const { user } = useContext(AuthContext);
   return (
-    /*<Router>
-      <Routes>
-        <Route exact path="/" element={ <Home />}></Route>
-        <Route path="/register" element={ <Register />}></Route>
-        <Route path="/login" element={ <Login />}></Route>
-        <Route path="/movies" element={<Home type="movies" />}></Route>
-        <Route path="/series" element={<Home type="series"/>}></Route>
-        <Route path="/watch" element={<Watch />}></Route>
-      </Routes>
-    </Router>*/
     <Router>
       <Routes>
         <Route exact path="/" element={user ? <Home /> : <Navigate to="/register" />}></Route>
@@ -30,8 +22,8 @@ const App = () => {
         <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />}></Route>
         { user && (
           <>
-            <Route path="/movies" element={<Home type="movies" />}></Route>
-            <Route path="/series" element={<Home type="series"/>}></Route>
+            <Route path="/movies" element={<Home type="movie" />}></Route>
+            <Route path="/series" element={<Home type="serie"/>}></Route>
             <Route path="/watch" element={<Watch />}></Route>
           </>
         )}

@@ -1,13 +1,11 @@
-//import { AcUnit } from "@material-ui/icons"
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Featured from "../../components/featured/Featured";
 import List from "../../components/list/List";
-import Navbar from "../../components/navbar/Navbar"
+import Navbar from "../../components/navbar/Navbar";
 import "./home.scss";
 import axios from "axios";
 
-const Home = ({type}) => {
+const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState(null);
 
@@ -18,8 +16,8 @@ const Home = ({type}) => {
           `lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`,{
             headers:{
               token: 
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTI0MDAyODA0YmZlY2I3M2VjMmEwNyIsImlzQWRtaW4iOiJ0cnVlIiwiaWF0IjoxNjYyMzYwNDE0LCJleHAiOjE2NjI2MTk2MTR9.gF476qYXuRf4mQ_-gsFZdRXLya3NiKnigzv98r2Dst4"
-            }
+                "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
+            },
           }
         );
         //console.log(res);
@@ -33,7 +31,7 @@ const Home = ({type}) => {
   return (
     <div className='home'>
       <Navbar />
-      <Featured type={type} />
+      <Featured type={type} setGenre={setGenre} />
       {lists.map((list) => (
         <List list={list} />
       ))}
@@ -41,4 +39,4 @@ const Home = ({type}) => {
   );
 };
 
-export default Home
+export default Home;

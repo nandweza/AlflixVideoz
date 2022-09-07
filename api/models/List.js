@@ -1,8 +1,5 @@
 const mongoose = require("mongoose");
 
-const { Schema } = mongoose;
-mongoose.Promise = global.Promise;
-
 const ListSchema = new mongoose.Schema(
   {
     title: { type: String, required:true, unique:true },

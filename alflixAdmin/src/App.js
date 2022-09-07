@@ -9,6 +9,9 @@ import NewUser from "./pages/newUser/NewUser";
 import MovieList from "./pages/movieList/MovieList";
 import Movie from "./pages/movie/Movie";
 import NewMovie from "./pages/newMovie/NewMovie";
+import ListList from "./pages/listList/ListList";
+import List from "./pages/list/List";
+import NewList from "./pages/newList/NewList";
 import Login from "./pages/login/Login";
 import { AuthContext } from './context/authContext/AuthContext';
 import { useContext } from "react";
@@ -46,6 +49,15 @@ function App() {
           </Route>
           <Route path="/newmovie">
             <NewMovie />
+          </Route>
+          <Route path="/lists">
+            <ListList />
+          </Route>
+          <Route path="/list/:listId">
+            <List />
+          </Route>
+          <Route path="/newlist">
+            <NewList />
           </Route>
         </div></>}
       </Switch>
