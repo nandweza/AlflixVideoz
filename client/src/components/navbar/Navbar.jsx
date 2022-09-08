@@ -1,3 +1,4 @@
+import logo from "../../logo.png";
 import React from 'react';
 import "./navbar.scss";
 import { ArrowDropDown, Search } from "@material-ui/icons";
@@ -19,7 +20,7 @@ const Navbar = () => {
     <div className={isScrolled ? 'navbar scrolled' : 'navbar'}>
       <div className="container">
         <div className="left">
-          <span>AlflixVideoz</span>
+          <img src={logo} alt="" />
           <Link to="/" className='link'>
             <span>Home</span>
           </Link>

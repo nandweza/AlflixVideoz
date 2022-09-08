@@ -1,3 +1,4 @@
+import logo from "../../logo.png";
 import React from "react";
 import "./topbar.css";
 import { NotificationsNone, Language, Settings } from "@material-ui/icons";
@@ -7,7 +8,7 @@ export default function Topbar() {
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo">AlflixVideozAdmin</span>
+          <img className="logo" src={logo} alt="alflix-logo" />
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
