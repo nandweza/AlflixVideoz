@@ -8,6 +8,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./listItem.scss";
 import { Link } from 'react-router-dom';
+import video from "../../0.mp4";
 
 export default function ListItem({ index, item }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -38,10 +39,10 @@ export default function ListItem({ index, item }) {
         onMouseEnter={() => setIsHovered(true)} 
         onMouseLeave={() => setIsHovered(false)}
       >
-        <img src={movie?.imgSm} alt="" />
+        <img src={movie?.img} alt="" />
         {isHovered && (
           <>
-            <video src={movie.trailer} autoPlay={true} loop />
+            <video src={video/*movie.trailer*/} autoPlay={true} muted={true} loop />
             <div className="itemInfo">
               <div className="icons">
                 <PlayArrow className="icon" />

@@ -41,6 +41,7 @@ export default function Featured({ type, setGenre }) {
             <option value="documentary">Documentary</option>
             <option value="High-school">High School</option>
             <option value="love-story">Love Story</option>
+            <option value="cartoon">Cartoon</option>
           </select>
         </div>
       )}

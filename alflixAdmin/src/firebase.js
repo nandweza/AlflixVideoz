@@ -1,13 +1,13 @@
 import firebase from "firebase";
 
 const firebaseConfig = {
-  apiKey: process.env.FKEY,
-  authDomain: "alflixvideoz-29d65.firebaseapp.com",
-  projectId: "alflixvideoz-29d65",
-  storageBucket: process.env.SBCKT,
-  messagingSenderId: "746347983871",
-  appId: "1:746347983871:web:035571a318b7977538edca",
-  measurementId: "G-8G9C93V4LY"
+  apiKey: "AIzaSyDZEsmROI8mcAVIcpQMHT2UNh1po1GslRo",
+  authDomain: "alflixvz.firebaseapp.com",
+  projectId: "alflixvz",
+  storageBucket: "alflixvz.appspot.com",
+  messagingSenderId: "233797989557",
+  appId: "1:233797989557:web:98a665b717d48c231cfafc",
+  measurementId: "G-4H9TEMY59S"
 };
 
 firebase.initializeApp(firebaseConfig);
