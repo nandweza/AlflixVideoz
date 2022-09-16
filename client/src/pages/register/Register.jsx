@@ -2,7 +2,7 @@ import logo from "../../logo.png";
 import { useRef, useState } from "react";
 import "./register.scss";
 import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -33,7 +33,7 @@ export default function Register() {
       <div className="top">
         <div className="wrapper">
           <img className="logo" src={logo} alt="" />
-          <button className="loginButton" ><a href="/login">Sign In</a></button>
+          <button className="loginButton" >Sign In</button>
         </div>
       </div>
       <div className="container">
