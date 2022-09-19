@@ -95,4 +95,13 @@ router.get("/", verify, async (req, res) => {
   }
 });
 
+//get from search
+router.get("/", (req, res) => {
+  const { q } = req.query;
+
+  const movies = Movie.find({$regex: q})
+  
+  res.json(movies);
+});
+
 module.exports = router;
