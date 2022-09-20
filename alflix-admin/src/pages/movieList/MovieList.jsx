@@ -5,7 +5,7 @@ import { productRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function ProductList() {
+export default function MovieList() {
   const [data, setData] = useState(productRows);
 
   const handleDelete = (id) => {

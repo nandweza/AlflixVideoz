@@ -2,13 +2,13 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 import "./App.css";
 import Home from "./pages/home/Home";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import UserList from "./pages/userList/UserList";
 import User from "./pages/user/User";
 import NewUser from "./pages/newUser/NewUser";
-import ProductList from "./pages/movieList/MovieList";
-import Product from "./pages/movie/Movie";
-import NewProduct from "./pages/newMovie/NewMovie";
+import MovieList from "./pages/movieList/MovieList";
+import Movie from "./pages/movie/Movie";
+import NewMovie from "./pages/newMovie/NewMovie";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Topbar />
       <div className="container">
         <Sidebar />
-        <Routes>
+        <Switch>
           <Route exact path="/">
             <Home />
           </Route>
@@ -30,15 +30,15 @@ function App() {
             <NewUser />
           </Route>
           <Route path="/products">
-            <ProductList />
+            <MovieList />
           </Route>
           <Route path="/product/:productId">
-            <Product />
+            <Movie />
           </Route>
           <Route path="/newproduct">
-            <NewProduct />
+            <NewMovie />
           </Route>
-        </Routes>
+        </Switch>
       </div>
     </Router>
   );

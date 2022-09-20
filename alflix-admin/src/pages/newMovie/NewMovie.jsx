@@ -1,6 +1,6 @@
-import "./newProduct.css";
+import "./newMovie.css";
 
-export default function NewProduct() {
+export default function NewMovie() {
   return (
     <div className="newProduct">
       <h1 className="addProductTitle">New Product</h1>
